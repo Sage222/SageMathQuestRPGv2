@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+  
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+  
+  .font-mono-numbers {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom RPG animations */
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-6px, 4px) rotate(-1deg); }
+  40% { transform: translate(6px, -4px) rotate(1.5deg); }
+  60% { transform: translate(-4px, -3px) rotate(-1deg); }
+  80% { transform: translate(4px, 3px) rotate(0.5deg); }
+}
+
+.animate-shake {
+  animation: shake 0.35s ease-in-out;
+}
+
+@keyframes float-up {
+  0% { transform: translateY(0) scale(0.9); opacity: 0; }
+  20% { transform: translateY(-8px) scale(1.15); opacity: 1; }
+  80% { transform: translateY(-24px) scale(1); opacity: 0.9; }
+  100% { transform: translateY(-36px) scale(0.9); opacity: 0; }
+}
+
+.animate-float-up {
+  animation: float-up 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes gold-shine {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-gold-shine {
+  background: linear-gradient(90deg, rgba(245,158,11,0.2) 0%, rgba(251,191,36,0.8) 50%, rgba(245,158,11,0.2) 100%);
+  background-size: 200% 100%;
+  animation: gold-shine 2s infinite linear;
+}
